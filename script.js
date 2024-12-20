@@ -4,7 +4,8 @@ fetch('songs.json')
   .then(songs => {
     let currentSong = null;
     let score = 0;
-    let remainingSongs = [...songs];
+    let remainingSongs = songs.slice(); // 克隆出所有歌曲數量
+    const totalSongs = 20; // 每次只從20首歌曲中隨機選取
 
     document.getElementById("start-button").addEventListener("click", () => {
       score = 0;
@@ -48,6 +49,6 @@ fetch('songs.json')
     function resetGame() {
       document.getElementById("game-container").style.display = "none";
       document.getElementById("start-button").style.display = "inline-block";
-      remainingSongs = [...songs];
+      remainingSongs = songs.slice();
     }
   });
