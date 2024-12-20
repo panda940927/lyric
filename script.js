@@ -46,8 +46,6 @@ fetch('songs.json')
       document.getElementById("next-button").style.display = "block"; // 顯示下一題按鈕
     });
 
-    document.getElementById("next-button").addEventListener("click", nextSong);
-
     function resetGame() {
       document.getElementById("game-container").style.display = "none";
       document.getElementById("start-button").style.display = "inline-block";
