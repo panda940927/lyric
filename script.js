@@ -30,17 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadSongs() {
     try {
         console.log("Loading songs..."); // 調試用
-        // 這是測試用的假資料，實際使用時替換成真實的 fetch 請求
+        // 假資料或使用 fetch 來載入真實的 JSON 檔案
         songs = [
             { "lyric": "測試歌詞1", "title": "測試歌曲1" },
             { "lyric": "測試歌詞2", "title": "測試歌曲2" },
             { "lyric": "測試歌詞3", "title": "測試歌曲3" },
-            // 可以添加更多測試數據
+            // 添加更多測試數據或使用實際的 fetch 請求
         ];
-        
-        // 如果要從實際文件加載，使用這段代碼：
-        // const response = await fetch("songs.json");
-        // songs = await response.json();
         
         remainingSongs = [...songs].sort(() => Math.random() - 0.5);
         console.log("Songs loaded:", remainingSongs); // 調試用

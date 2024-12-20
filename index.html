@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>猜歌遊戲</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜歌遊戲</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+
     <h1>猜歌遊戲</h1>
-    <button id="start-button" class="button">開始遊戲</button>
 
     <div id="game-container" class="hidden">
-      <p class="lyric" id="lyric"></p>
-      <input type="text" id="answer" placeholder="輸入歌名">
-      <button id="submit-button" class="button">提交答案</button>
-      <p id="feedback"></p>
-      <p>目前分數：<span id="score">0</span></p>
-      <button id="next-button" class="button hidden">下一首</button>
+        <p id="lyric"></p>
+        <input type="text" id="answer" placeholder="輸入答案">
+        <button id="submit-button">提交答案</button>
+        <p id="feedback"></p>
+        <p>目前分數：<span id="score">0</span></p>
+        <button id="next-button" class="hidden">下一首</button>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <button id="start-button">開始遊戲</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
