@@ -26,6 +26,7 @@ fetch('songs.json')
       document.getElementById("answer").value = "";
       document.getElementById("feedback").textContent = "";
       document.getElementById("next-button").style.display = "none";
+      document.getElementById("submit-button").textContent = "提交答案"; // 初始化按鈕文字
     }
 
     document.getElementById("submit-button").addEventListener("click", () => {
@@ -41,7 +42,8 @@ fetch('songs.json')
       } else {
         document.getElementById("feedback").textContent = `答錯了！正確答案是：${currentSong.title}`;
       }
-      document.getElementById("next-button").style.display = "block";
+      document.getElementById("submit-button").textContent = "下一題"; // 改變按鈕文字
+      document.getElementById("next-button").style.display = "block"; // 顯示下一題按鈕
     });
 
     document.getElementById("next-button").addEventListener("click", nextSong);
