@@ -39,12 +39,15 @@ fetch('songs.json')
         score += 5;
         document.getElementById("feedback").textContent = "答對了！";
         document.getElementById("score").textContent = score;
+        document.getElementById("submit-button").textContent = "下一題"; // 從提交答案變成下一題
       } else {
         document.getElementById("feedback").textContent = `答錯了！正確答案是：${currentSong.title}`;
+        document.getElementById("submit-button").textContent = "下一題"; // 從提交答案變成下一題
       }
-      document.getElementById("submit-button").textContent = "下一題"; // 改變按鈕文字
       document.getElementById("next-button").style.display = "block"; // 顯示下一題按鈕
     });
+
+    document.getElementById("next-button").addEventListener("click", nextSong);
 
     function resetGame() {
       document.getElementById("game-container").style.display = "none";
