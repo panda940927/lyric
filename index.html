@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>猜歌遊戲</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>猜歌名遊戲</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>猜歌遊戲</h1>
-  <p>歡迎來到猜歌遊戲，挑戰你的音樂知識！</p>
-  <button id="start-button">開始遊戲</button>
+    <div class="welcome-screen" id="welcome-screen">
+        <h1>猜歌名遊戲</h1>
+        <p>準備好挑戰你的音樂知識了嗎？</p>
+        <button class="start-btn" onclick="startGame()">開始遊戲</button>
+    </div>
 
-  <div id="game-container" style="display: none;">
-    <p class="lyric" id="lyric"></p>
-    <input type="text" id="answer" placeholder="輸入歌名">
-    <button id="submit-button">提交答案</button>
-    <p id="feedback"></p>
-    <p>目前分數：<span id="score">0</span></p>
-    <button id="next-button" style="display: none;">下一首</button>
-  </div>
-
-  <script src="script.js"></script>
+    <div class="game-container" id="game-container" style="display: none;">
+        <h1>猜歌名遊戲</h1>
+        <div class="progress">題目 <span id="current-question">1</span>/20</div>
+        <div class="score-display">得分: <span id="score">0</span></div>
+        <div class="message-box" id="message-box"></div>
+        <div class="lyric-display" id="lyric"></div>
+        <input type="text" class="answer-input" id="answer" placeholder="請輸入歌名">
+        <button class="submit-btn" onclick="checkAnswer()">提交答案</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
