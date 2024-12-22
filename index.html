@@ -2,16 +2,32 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>猜歌名遊戲</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="welcome-screen" id="welcome-screen">
+    <!-- 暱稱輸入畫面 -->
+    <div class="nickname-screen" id="nickname-screen">
         <h1>猜歌名遊戲</h1>
-        <p>準備好挑戰你的音樂知識了嗎？</p>
-        <button class="start-btn" onclick="startGame()">開始遊戲</button>
+        <div class="input-container">
+            <input type="text" id="nickname-input" placeholder="請輸入暱稱" maxlength="10">
+            <p class="error-message" id="nickname-error"></p>
+            <button class="start-btn" onclick="setNickname()">開始遊戲</button>
+        </div>
     </div>
 
+    <!-- 歡迎畫面 -->
+    <div class="welcome-screen" id="welcome-screen" style="display: none;">
+        <h1>歡迎, <span id="player-nickname"></span>!</h1>
+        <div class="menu-buttons">
+            <button class="menu-btn" onclick="startGame()">開始遊戲</button>
+            <button class="menu-btn" onclick="showLeaderboard()">排行榜</button>
+            <button class="menu-btn admin-only" id="admin-btn" style="display: none;">管理模式</button>
+        </div>
+    </div>
+
+    <!-- 遊戲主畫面 -->
     <div class="game-container" id="game-container" style="display: none;">
         <h1>猜歌名遊戲</h1>
         <div class="progress">題目 <span id="current-question">1</span>/20</div>
@@ -21,11 +37,26 @@
         <input type="text" class="answer-input" id="answer" placeholder="請輸入歌名">
         <button class="submit-btn" onclick="checkAnswer()">提交答案</button>
     </div>
+
+    <!-- 排行榜畫面 -->
+    <div class="leaderboard" id="leaderboard" style="display: none;">
+        <h1>排行榜</h1>
+        <div class="leaderboard-content" id="leaderboard-content">
+            <!-- 排行榜內容將由JavaScript動態生成 -->
+        </div>
+        <button class="menu-btn" onclick="hideLeaderboard()">返回</button>
+    </div>
+
+    <!-- 管理員面板 -->
+    <div class="admin-panel" id="admin-panel" style="display: none;">
+        <h1>管理員面板</h1>
+        <div class="admin-controls">
+            <button class="menu-btn" onclick="clearLeaderboard()">清空排行榜</button>
+            <button class="menu-btn" onclick="exportData()">導出數據</button>
+            <button class="menu-btn" onclick="hideAdminPanel()">返回</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
-    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-      <img src="image1.jpg" style="float: left;">
-    <a href="https://www.instagram.com/zus0622/" target="_blank">
-      <img src="image2.jpg" style="float: left;">
-    </a>
 </body>
 </html>

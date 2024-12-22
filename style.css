@@ -134,3 +134,152 @@ img {
   max-width: 150px; /* 設定圖片的最大寬度 */
   height: auto; /* 確保圖片按比例縮放 */
 }
+/* 響應式基礎設置 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Microsoft JhengHei', sans-serif;
+  line-height: 1.6;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* 容器基礎樣式 */
+.nickname-screen,
+.welcome-screen,
+.game-container,
+.leaderboard,
+.admin-panel {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+  .nickname-screen,
+  .welcome-screen,
+  .game-container,
+  .leaderboard,
+  .admin-panel {
+      padding: 20px;
+      margin: 10px;
+  }
+
+  .lyric-display {
+      font-size: 18px;
+  }
+
+  .menu-btn {
+      width: 100%;
+      margin: 5px 0;
+  }
+}
+
+/* 輸入框樣式 */
+.input-container {
+  margin: 20px 0;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* 按鈕樣式 */
+.menu-btn, .submit-btn, .start-btn {
+  padding: 12px 25px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 5px;
+}
+
+.menu-btn:hover, .submit-btn:hover, .start-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+/* 訊息框動畫 */
+.message-box {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.message-box.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.message-box.correct {
+  background-color: #d4edda;
+  color: #155724;
+  animation: popIn 0.5s ease;
+}
+
+.message-box.incorrect {
+  background-color: #f8d7da;
+  color: #721c24;
+  animation: shake 0.5s ease;
+}
+
+/* 動畫效果 */
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+/* 排行榜樣式 */
+.leaderboard-content {
+  margin: 20px 0;
+}
+
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.leaderboard-item:nth-child(1) {
+  background-color: #ffd700;
+}
+
+.leaderboard-item:nth-child(2) {
+  background-color: #c0c0c0;
+}
+
+.leaderboard-item:nth-child(3) {
+  background-color: #cd7f32;
+}
