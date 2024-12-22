@@ -127,3 +127,10 @@ body {
 .answer-input.incorrect {
   border-color: #dc3545;
 }
+
+img {
+  float: left; /* 讓圖片靠左對齊 */
+  margin-right: 15px; /* 圖片與右側內容的間距 */
+  max-width: 150px; /* 設定圖片的最大寬度 */
+  height: auto; /* 確保圖片按比例縮放 */
+}
